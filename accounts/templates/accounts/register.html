@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="bg-white p-4 rounded shadow-lg w-full max-w-3xl mx-auto mt-10">
+    <h2 class="text-3xl font-semibold mb-5 text-center">Create an Account</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="mb-3">
+                <label for="first_name" class="block text-gray-700 font-medium ">First Name</label>
+                <input type="text" name="first_name" class="border border-gray-300 p-2 rounded w-full" required>
+            </div>
+            <div class="mb-3">
+                <label for="last_name" class="block text-gray-700 font-medium ">Last Name</label>
+                <input type="text" name="last_name" class="border border-gray-300 p-2 rounded w-full" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="block text-gray-700 font-medium ">Email</label>
+                <input type="email" name="email" class="border border-gray-300 p-2 rounded w-full" required>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="block text-gray-700 font-medium">Username</label>
+                <input type="text" name="username" class="border border-gray-300 p-2 rounded w-full" required>
+            </div>
+            <div class="mb-3">
+                <label for="password1" class="block text-gray-700 font-medium ">Password</label>
+                <input type="password" name="password1" class="border border-gray-300 p-2 rounded w-full" required>
+            </div>
+            <div class="mb-3">
+                <label for="password2" class="block text-gray-700 font-medium ">Confirm Password</label>
+                <input type="password" name="password2" class="border border-gray-300 p-2 rounded w-full" required>
+            </div>
+        </div>
+        <!-- <button type="submit" class="w-full bg-green-500 text-white hover:bg-green-600 font-semibold py-2 mt-4 rounded">
+            Register
+        </button> -->
+            <button type="submit" class="w-full bg-lightgray-600 p-2 px-4 rounded-[6px] hover:bg-green-600 outline hover:outline-none outline-slate-700 transition delay-75 ease-in-out my-3">Register</button>
+
+    </form> 
+</div>
+{% endblock %}
+
